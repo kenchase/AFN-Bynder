@@ -1,1 +1,1 @@
-console.log('AFN Bynder Testing Again Again.');
+console.log('AFN Bynder Testing Again.');

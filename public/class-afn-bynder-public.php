@@ -73,7 +73,7 @@ class Afn_Bynder_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/afn-bynder-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/dist/afn-bynder-public.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -98,6 +98,30 @@ class Afn_Bynder_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dist/afn-bynder-public.min.js', array( 'jquery' ), $this->version, false );
 
+	}
+
+	/**
+	 * Registers all shortcodes at once
+	 *
+	 * @return [type] [description]
+	 */
+	public function register_shortcodes() {
+		add_shortcode( 'afn-api-test',  array( $this, 'afn_api_test' ));
+	}
+
+	/**
+	 * Processes shortcode apn-api-test
+	 *
+	 * @param	array	$atts		The attributes from the shortcode
+	 * @return	mixed	$output		Output of the buffer
+	 */
+
+	public function afn_api_test($atts) {
+		// Output some HTML
+		ob_start();
+		include( plugin_dir_path( dirname(__FILE__) ) . 'public/templates/tpl-afn-api-test.php' );
+		return ob_get_clean();
+	
 	}
 
 }

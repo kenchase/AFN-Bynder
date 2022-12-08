@@ -2,24 +2,25 @@
   "name": "afn-bynder",
   "version": "1.0.0",
   "description": "For testing the Bynder API",
-  "main": "index.js",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
   "scripts": {
-    "watch": "webpack --mode=development --watch --config webpack.config.js",
-    "build": "webpack --mode=production --config webpack.config.js"
+    "build": "webpack --mode development",
+    "dist": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenchase/AFN-Bynder"
   },
   "author": "Ken Chase",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
-    "lodash": "^4.17.21",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.2",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",
