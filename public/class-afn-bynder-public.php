@@ -96,8 +96,8 @@ class Afn_Bynder_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dist/afn-bynder-public.min.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script( 'google-books-api', 'https://www.google.com/books/jsapi.js', '', $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dist/afn-bynder-public.min.js', array( 'jquery', 'google-books-api' ), $this->version, false );
 	}
 
 	/**
@@ -121,7 +121,6 @@ class Afn_Bynder_Public {
 		ob_start();
 		include( plugin_dir_path( dirname(__FILE__) ) . 'public/templates/tpl-afn-api-test.php' );
 		return ob_get_clean();
-	
 	}
 
 }

@@ -1,3 +1,1 @@
-<div class="afn-api-test">
-    <p>Testing the AFN API plugin</p>
-</div>
+ <div id="afn-bynder-wrapper"></div>
