@@ -11,7 +11,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = [
   {
     // Create the entry points.
-    // One for frontend and one for the admin area.
+    // One for frontend (public) and one for the admin area.
     entry: {
       // frontend and admin will replace the [name] portion of the output config below.
       public: ['./public/js/src/afn-bynder-public.js', './public/css/src/afn-bynder-public.scss'],
